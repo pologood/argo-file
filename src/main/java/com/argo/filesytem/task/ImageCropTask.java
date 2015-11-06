@@ -44,12 +44,11 @@ public class ImageCropTask extends AbstractFileTask {
             int width = Integer.parseInt(fileTaskInfo.getParams().get("width"));
             int height = Integer.parseInt(fileTaskInfo.getParams().get("height"));
 
-            logger.info("original, size({}, {})", originalImage.getWidth(), originalImage.getHeight());
-
-            BufferedImage resultImage = Scalr.crop(originalImage, x, y, width, height, null);
+            BufferedImage resultImage = Scalr.crop(originalImage, x, y, width, height);
 
             if (logger.isDebugEnabled()){
-                logger.info("crop, size({}, {})", resultImage.getWidth(), resultImage.getHeight());
+                logger.debug("original, size({}, {})", originalImage.getWidth(), originalImage.getHeight());
+                logger.debug("crop, size({}, {})", resultImage.getWidth(), resultImage.getHeight());
             }
 
             String ext = Files.getFileExtension(filePath);
@@ -61,7 +60,7 @@ public class ImageCropTask extends AbstractFileTask {
 
                 String newFilename = String.format("%s.%s.%s", filePath, w, ext);
 
-                if (!ImageIO.write(thumbnail, "JPEG", new File(newFilename))) {
+                if (!ImageIO.write(thumbnail, ext, new File(newFilename))) {
                     logger.error("File write failed. file=" + newFilename);
                     return false;
                 }

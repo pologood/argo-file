@@ -52,8 +52,8 @@ public abstract class AbstractFileRequestLocalHandler implements FileRequestHand
 
     /**
      * 生成文件夹
-     * @param request
-     * @return
+     * @param request 文件请求
+     * @return FilePathInfo 文件路径
      */
     protected abstract FilePathInfo generateFolder(FileRequest request);
 

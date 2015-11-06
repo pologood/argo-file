@@ -58,8 +58,9 @@ public class FileTaskFactory {
 
     /**
      * set
-     * @param taskTag
-     * @param callback
+     * @param taskTag 任务标签
+     * @param callback 文件处理回调
+     * @return FileTaskFactory 返回本实例
      */
     public FileTaskFactory setCallback(String taskTag, FileTaskCallback callback){
 

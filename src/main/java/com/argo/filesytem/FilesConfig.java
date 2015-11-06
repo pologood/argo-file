@@ -16,7 +16,7 @@ public class FilesConfig {
 
     /**
      * 加载配置信息
-     * @throws IOException
+     * @throws IOException 文件读取异常
      */
     public synchronized static void load() throws IOException {
         if (instance != null){

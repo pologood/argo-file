@@ -38,6 +38,9 @@ public class ImageThumbTask extends AbstractFileTask {
             throw e;
         }
 
+        int srcWidth = originalImage.getWidth();
+        int srcHeight = originalImage.getHeight();
+
         String ext = Files.getFileExtension(filePath);
         int count = 0;
         for (Integer width : FilesConfig.instance.getThumbs()){
@@ -46,10 +49,16 @@ public class ImageThumbTask extends AbstractFileTask {
 
             try {
 
+                if (width < srcWidth && width < srcHeight){
+                    //直接拷贝
+                    ImageIO.write(originalImage, ext, new File(newFilename));
+                    continue;
+                }
+
                 BufferedImage thumbnail = Scalr.resize(originalImage, Scalr.Method.QUALITY, Scalr.Mode.AUTOMATIC,
                         width, Scalr.OP_ANTIALIAS);
 
-                if (!ImageIO.write(thumbnail, "JPEG", new File(newFilename))) {
+                if (!ImageIO.write(thumbnail, ext, new File(newFilename))) {
                     logger.error("File write failed. file=" + newFilename);
                     return false;
                 }else{
