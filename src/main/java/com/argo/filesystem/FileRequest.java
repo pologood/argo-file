@@ -60,7 +60,7 @@ public class FileRequest {
 
     public String getFileExt() {
         if (fileExt == null){
-            fileExt = Files.getFileExtension(file.getName());
+            fileExt = Files.getFileExtension(file.getOriginalFilename());
         }
         return fileExt;
     }
