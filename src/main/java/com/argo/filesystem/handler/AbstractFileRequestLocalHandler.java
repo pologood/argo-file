@@ -1,7 +1,7 @@
-package com.argo.filesytem.handler;
+package com.argo.filesystem.handler;
 
-import com.argo.filesytem.*;
-import com.argo.filesytem.exception.FileReadException;
+import com.argo.filesystem.*;
+import com.argo.filesystem.exception.FileReadException;
 import com.google.common.base.Preconditions;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;

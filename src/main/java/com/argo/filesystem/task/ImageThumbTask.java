@@ -1,7 +1,7 @@
-package com.argo.filesytem.task;
+package com.argo.filesystem.task;
 
-import com.argo.filesytem.FileTaskInfo;
-import com.argo.filesytem.FilesConfig;
+import com.argo.filesystem.FileTaskInfo;
+import com.argo.filesystem.FilesConfig;
 import com.google.common.io.Files;
 import org.imgscalr.Scalr;
 

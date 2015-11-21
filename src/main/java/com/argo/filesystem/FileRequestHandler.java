@@ -1,6 +1,6 @@
-package com.argo.filesytem;
+package com.argo.filesystem;
 
-import com.argo.filesytem.exception.FileReadException;
+import com.argo.filesystem.exception.FileReadException;
 
 import java.io.File;
 import java.io.IOException;

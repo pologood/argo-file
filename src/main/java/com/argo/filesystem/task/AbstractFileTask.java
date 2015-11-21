@@ -1,6 +1,6 @@
-package com.argo.filesytem.task;
+package com.argo.filesystem.task;
 
-import com.argo.filesytem.*;
+import com.argo.filesystem.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.argo.filesytem;
+package com.argo.filesystem;
 
 import com.google.common.io.Files;
 

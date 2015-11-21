@@ -1,4 +1,4 @@
-package com.argo.filesytem.exception;
+package com.argo.filesystem.exception;
 
 /**
  * Created by yamingd on 9/10/15.

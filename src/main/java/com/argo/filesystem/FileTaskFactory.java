@@ -1,8 +1,8 @@
-package com.argo.filesytem;
+package com.argo.filesystem;
 
-import com.argo.filesytem.task.ImageCropTask;
-import com.argo.filesytem.task.ImageThumbTask;
-import com.argo.filesytem.task.ToMP3Task;
+import com.argo.filesystem.task.ImageCropTask;
+import com.argo.filesystem.task.ImageThumbTask;
+import com.argo.filesystem.task.ToMP3Task;
 
 import java.io.IOException;
 import java.util.ArrayList;

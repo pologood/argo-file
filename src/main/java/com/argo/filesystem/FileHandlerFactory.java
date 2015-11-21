@@ -1,7 +1,7 @@
-package com.argo.filesytem;
+package com.argo.filesystem;
 
-import com.argo.filesytem.handler.FileRequestDateHandler;
-import com.argo.filesytem.handler.FileRequestHashHandler;
+import com.argo.filesystem.handler.FileRequestDateHandler;
+import com.argo.filesystem.handler.FileRequestHashHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

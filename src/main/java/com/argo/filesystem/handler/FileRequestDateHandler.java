@@ -1,8 +1,8 @@
-package com.argo.filesytem.handler;
+package com.argo.filesystem.handler;
 
-import com.argo.filesytem.FilePathInfo;
-import com.argo.filesytem.FileRequest;
-import com.argo.filesytem.FilesConfig;
+import com.argo.filesystem.FilePathInfo;
+import com.argo.filesystem.FileRequest;
+import com.argo.filesystem.FilesConfig;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.io.File;
