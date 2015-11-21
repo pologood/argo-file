@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class FilesConfig {
 
-    private static final String confName = "files.yaml";
+    public static final String confName = "files.yaml";
 
     public static FilesConfig instance = null;
 

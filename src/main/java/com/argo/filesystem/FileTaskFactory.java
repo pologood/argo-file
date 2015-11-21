@@ -3,6 +3,9 @@ package com.argo.filesystem;
 import com.argo.filesystem.task.ImageCropTask;
 import com.argo.filesystem.task.ImageThumbTask;
 import com.argo.filesystem.task.ToMP3Task;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +14,9 @@ import java.util.List;
 /**
  * Created by yamingd on 9/10/15.
  */
-public class FileTaskFactory {
+public class FileTaskFactory implements InitializingBean {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private List<FileTask> taskList = new ArrayList<FileTask>();
 
@@ -20,7 +25,8 @@ public class FileTaskFactory {
         try {
             FilesConfig.load();
         } catch (IOException e) {
-            throw new RuntimeException("Load filesConfig Error.");
+            logger.error("Load filesConfig Error. Please check your " + FilesConfig.confName);
+            return;
         }
 
         this.addTask(new ImageCropTask());
@@ -37,6 +43,10 @@ public class FileTaskFactory {
      * 启动task
      */
     public void start(){
+        if (FilesConfig.instance == null){
+            logger.error("Load filesConfig Error. Please check your " + FilesConfig.confName);
+            return;
+        }
 
         List<String> cfgTasks = FilesConfig.instance.getTasks();
         if (cfgTasks ==null ||
@@ -101,4 +111,8 @@ public class FileTaskFactory {
 
     }
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        this.start();
+    }
 }

@@ -1,15 +1,14 @@
 package com.argo.filesystem;
 
 import com.google.common.io.Files;
-
-import java.io.File;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Created by yamingd on 9/10/15.
  */
 public class FileRequest {
 
-    private File file;
+    private MultipartFile file;
     private Integer fileId;
     private String fileCategory;
     private String fileExt;
@@ -17,7 +16,7 @@ public class FileRequest {
 
     private String path;
 
-    public FileRequest(File file, Integer fileId, String fileCategory, String fileExt) {
+    public FileRequest(MultipartFile file, Integer fileId, String fileCategory, String fileExt) {
         this.file = file;
         this.fileId = fileId;
         this.fileCategory = fileCategory;
@@ -28,18 +27,18 @@ public class FileRequest {
         this.path = path;
     }
 
-    public FileRequest(File file, Integer fileId, String fileCategory) {
+    public FileRequest(MultipartFile file, Integer fileId, String fileCategory) {
         this.file = file;
         this.fileId = fileId;
         this.fileCategory = fileCategory;
         this.fileExt = Files.getFileExtension(file.getName());
     }
 
-    public File getFile() {
+    public MultipartFile getFile() {
         return file;
     }
 
-    public void setFile(File file) {
+    public void setFile(MultipartFile file) {
         this.file = file;
     }
 

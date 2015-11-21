@@ -43,8 +43,8 @@ public abstract class AbstractFileRequestLocalHandler implements FileRequestHand
             destFile.delete();
         }
 
-        Files.copy(request.getFile(), destFile);
-        request.getFile().delete();
+        //Files.copy(request.getFile(), destFile);
+        request.getFile().transferTo(destFile);
 
         return new FileResponse(destFile, filePathInfo.getFullPath(), filePathInfo.getPath() + fileName);
 

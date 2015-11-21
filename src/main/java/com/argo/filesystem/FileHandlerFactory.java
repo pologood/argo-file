@@ -4,12 +4,14 @@ import com.argo.filesystem.handler.FileRequestDateHandler;
 import com.argo.filesystem.handler.FileRequestHashHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 /**
  * Created by yamingd on 9/10/15.
  */
+@Component
 public class FileHandlerFactory {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -21,7 +23,8 @@ public class FileHandlerFactory {
         try {
             FilesConfig.load();
         } catch (IOException e) {
-            throw new RuntimeException("Load filesConfig Error.");
+            logger.error("Load filesConfig Error. Please check your " + FilesConfig.confName);
+            return;
         }
 
         date = new FileRequestDateHandler();
