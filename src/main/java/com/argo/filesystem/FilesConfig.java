@@ -57,6 +57,19 @@ public class FilesConfig {
      */
     private Integer tasktry;
 
+    /**
+     * IMAGE CDN域名
+     */
+    private String cdnImage;
+    /**
+     * VIDEO CDN域名
+     */
+    private String cdnVideo;
+    /**
+     * AUDIO CDN域名
+     */
+    private String cdnAudio;
+
     public String getFolder() {
         return folder;
     }
@@ -111,5 +124,29 @@ public class FilesConfig {
 
     public void setTasktry(Integer tasktry) {
         this.tasktry = tasktry;
+    }
+
+    public String getCdnImage() {
+        return cdnImage;
+    }
+
+    public void setCdnImage(String cdnImage) {
+        this.cdnImage = cdnImage;
+    }
+
+    public String getCdnVideo() {
+        return cdnVideo;
+    }
+
+    public void setCdnVideo(String cdnVideo) {
+        this.cdnVideo = cdnVideo;
+    }
+
+    public String getCdnAudio() {
+        return cdnAudio;
+    }
+
+    public void setCdnAudio(String cdnAudio) {
+        this.cdnAudio = cdnAudio;
     }
 }

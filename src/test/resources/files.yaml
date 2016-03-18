@@ -14,3 +14,7 @@ tasks:
 tasksleep: 500
 taskwait: 2000
 tasktry: 3
+
+cdnImage: test
+cdnVideo: test
+cdnAudio: test
